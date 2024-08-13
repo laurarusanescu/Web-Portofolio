@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to my portfolio 😀</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class ="about">
+            <img src="my-image.jpg" alt="Laura Rusanescu" id="profilePhoto">
+            <h2>About Me 👩</h2>
+            <p id="p1">Hello! I'm Laura Rusanescu, a student at Babes Bolyai University in Cluj, Romania, with a strong passion for DevOps. I thrive in fast-paced environments where I can dive into complex problems and automate processes to make things run smoother and more efficiently. Technology fascinates me, and I’m always excited to learn new skills and stay updated with the latest trends.</p>
+    
+            <h2>Professional Achievements 👩‍💻</h2>
+            <p id="p1">In terms of my professional journey, I’ve built a solid foundation in a range of programming languages and tools. I’m proficient in Python, Java, C++, C, and Assembly, and I have experience with web technologies like HTML, CSS, and JavaScript. My expertise also extends to data tools such as SQL, Pandas, and Jupyter, as well as version control with Git. Whether it's working on personal projects or collaborating in team settings, I strive to bring creativity and technical know-how to every challenge.</p>
+    
+            <h2>More and more 💃</h2>
+            <p id="p1">Outside of academics and tech, I lead a vibrant and active life. I’m an avid movie and TV series enthusiast, especially those based on real events, which I find both entertaining and enlightening. Playing the piano is another passion of mine—it’s a wonderful way to relax and unleash my creativity. I also enjoy running when I can, as it’s a great way to stay fit and clear my mind. Being extroverted, I love meeting new people and forging strong connections. I’m also a keen reader and traveler, always eager to explore new places, experience different cultures, and gain fresh perspectives. I volunteer with the Hermes Society, which enhances my teamwork and organizational skills while allowing me to contribute to meaningful projects.</p>
+    
+            <button onclick="viewCV()">View My CV</button>
+            <div id="cv" class="hidden">
+                <iframe src="cv.pdf" width="100%" height="600px"></iframe>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="projects">
+        <h2>Personal projects💻</h2>
+        <div class="project">
+            <h3>Spotify Clone Project 🎧</h3>
+            <p>I created a song player with the help of Qt and the code is in C++, it
+                has a lot of functionalities such as sorting, creating a playlist and
+                showing the lyrics .</p>
+            <a href="https://github.com/laurarusanescu/Spotofy-clone-porject" target="_blank">Take a look!</a>
+        </div>
+        <div class="project">
+            <h3>Car Rental Application 🚗</h3>
+            <p>I designed and implemented a Java solution for car rental reservations, featuring a JavaFX GUI created with SceneBuilder and database connectivity via JDBC. The application includes thorough testing using JUnit.</p>
+            <a href="https://github.com/laurarusanescu/Car-Rental-Application" target="_blank">Take a look!</a>
+        </div>
+        <div class="project">
+            <h3>Hospital Managment Project 🩺</h3>
+            <p>I created an application in Python that manages the departments
+                and patients in a hospital with the help of the OOP principles. </p>
+            <a href="https://github.com/laurarusanescu/Departments-and-Patients-in-Hospital" target="_blank">Take a look!</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact me 📫</h2>
+        <button onclick="showContactInfo()">Show Contact Info</button>
+        <div id="contactInfo" class="hidden">
+            <p id="p5">Email: laurarusanescu2@gmail.com</p>
+            <div class="social-links">
+                <a href="https://github.com/laurarusanescu" target="_blank" class="github">GitHub</a>
+                <a href="https://www.linkedin.com/in/laura-rusanescu-039567260" target="_blank" class="linkedin">LinkedIn</a>
+                <a href="https://www.instagram.com/laura.r2002/" target="_blank" class="instagram">Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Laura Rusanescu. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

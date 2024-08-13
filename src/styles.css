@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5; /* Light Gray */
+    color: #333333; /* Charcoal Gray */
+}
+/* General style for social media links */
+.social-links a {
+    display: block; /* Ensures each link is on a new line */
+    text-decoration: none; /* Removes underline from links */
+    padding: 0.5em 0; /* Adds some vertical spacing */
+    font-weight: bold; /* Makes the text bold */
+    margin: 0.5em 0; /* Adds vertical spacing between links */
+    text-align: center; /* Centers the text */
+}
+
+/* Specific styles for each social media link */
+.social-links a.github {
+    color: #333; /* GitHub black */
+}
+
+.social-links a.linkedin {
+    color: #0077b5; /* LinkedIn blue */
+}
+
+.social-links a.instagram {
+    color: #E4405F; /* Instagram pink */
+}
+
+/* Optional: Adding hover effects */
+.social-links a:hover {
+    text-decoration: underline; /* Underlines the link on hover */
+}
+
+
+header {
+    background-color: #133658; /* Navy Blue */
+    color: rgb(89, 136, 189);
+    padding: 1em 0;
+    text-align: center;
+    border-bottom: 5px solid #2F4F4F; /* Dark Slate Gray */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#profilePhoto {
+    width: 200px; /* Adjust as needed */
+    height: auto; /* Makes the photo circular */
+    display: block;
+    margin: 0 auto 1em; /* Center the photo and add space below */
+    border: 3px solid #001f3f; /* Optional border for better visibility */
+}
+
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 2em;
+    margin: 2em 5%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #2F4F4F; /* Dark Slate Gray */
+    border-bottom: 5px solid #2F4F4F; /* Dark Slate Gray */
+}
+
+h2 {
+    color: #001f3f; /* Navy Blue */
+}
+
+h1 {
+    color: white; /* Navy Blue */
+}
+
+p, label, a {
+    color: #afd2f5; /* Slate Gray */
+}
+
+#p1 {
+    color: #235585; /* Dark Blue */
+}
+
+#p5 {
+    color:rgb(89, 136, 189);
+    text-align: center;
+}
+
+
+.project {
+    border: 1px solid #708090; /* Slate Gray */
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 8px;
+    background-color: #001f3f; /* Navy Blue */
+    color: white; /* Text color for projects */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.project:hover {
+    background-color: #235585; /* Slightly darker Navy Blue for hover effect */
+    transform: translateY(-5px);
+}
+
+footer {
+    background-color: #133658; /* Navy Blue */
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    border-top: 5px solid #2F4F4F; /* Dark Slate Gray */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 2em; /* Adds space before footer */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 0.5em 0 0.2em;
+    color: #708090; /* Slate Gray */
+}
+
+form input, form textarea {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #708090; /* Slate Gray */
+    border-radius: 4px;
+    background-color: #f8f8f8; /* White Smoke */
+}
+
+form input:focus, form textarea:focus {
+    border-color: #001f3f; /* Navy Blue */
+    outline: none;
+    background-color: #e0e0e0; /* Light Gray */
+}
+
+form button {
+    padding: 0.5em;
+    border: none;
+    background-color: #001f3f; /* Navy Blue */
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #001a33; /* Slightly darker Navy Blue for hover */
+}
+
+.hidden {
+    display: none;
+}
+
+#cv iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
