@@ -1,0 +1,76 @@
+variables:
+  IMAGE_NAME: laurarusanescu/web-portofolio
+  IMAGE_TAG: app-2.0
+  GOOGLE_CREDENTIALS: $GCP_CREDENTIALS
+  GCP_PROJ_ID: "web-proj-432412"
+  GCP_REGION: "europe-west2-a"
+  EMAIL: "laurarusanescu@gmail.com"
+  GOOGLE_ACCOUNT: ephemeral-runner@gitlab-r-saas-l-s-amd64-6.iam.gserviceaccount.com
+  CLUSTER_NAME: "web-portfolio"
+
+stages:
+  - build
+  - deploy
+  - destroy
+
+build_image:
+  stage: build
+  image: docker:27.1.1
+  services: 
+    - docker:27.1.1-dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  before_script:
+    - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  script:
+    - docker build -t $IMAGE_NAME:$IMAGE_TAG .
+    - docker push $IMAGE_NAME:$IMAGE_TAG
+  when: manual 
+
+deploy:
+  stage: deploy 
+  image: 
+    name: hashicorp/terraform:latest
+    entrypoint: ["/bin/sh", "-c"]
+  before_script:
+    - apk add --no-cache curl bash python3 py3-pip
+    - curl -sSL https://sdk.cloud.google.com | bash
+    - export PATH=$PATH:/root/google-cloud-sdk/bin
+    - gcloud components install beta
+    - echo $GOOGLE_CREDENTIALS | base64 -d > ./gcloud-service-key.json
+    - cat ./gcloud-service-key.json  # Debugging step
+    
+    #- gcloud config set account $GOOGLE_ACCOUNT
+    - gcloud auth activate-service-account --key-file=./gcloud-service-key.json
+    - gcloud config set project $GCP_PROJ_ID  
+    - gcloud config set compute/region $GCP_REGION
+    - gcloud auth list
+  script:
+    - cd tf
+    - pwd
+    - echo "DONE till now"
+    - terraform --version
+    - terraform init
+    - terraform apply -auto-approve
+  when: manual  
+
+destroy:
+  stage: destroy
+  image: 
+    name: hashicorp/terraform:latest
+    entrypoint: ["/bin/sh", "-c"]
+  before_script:
+    - apk add --no-cache curl bash python3 py3-pip
+    - curl -sSL https://sdk.cloud.google.com | bash
+    - export PATH=$PATH:/root/google-cloud-sdk/bin
+    - gcloud components install beta
+    - echo $GOOGLE_CREDENTIALS | base64 -d > ./gcloud-service-key.json
+    - cat ./gcloud-service-key.json  # Debugging step
+    
+    #- gcloud config set account $GOOGLE_ACCOUNT
+    - gcloud auth activate-service-account --key-file=./gcloud-service-key.json
+    - gcloud config set project $GCP_PROJ_ID  
+    - gcloud config set compute/region $GCP_REGION
+  script:
+    - gcloud container clusters delete $CLUSTER_NAME --zone $GCP_REGION --quiet
+#  when: manual  
