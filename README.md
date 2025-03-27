@@ -11,10 +11,4 @@ This project demonstrates how to deploy a containerized application to a Kuberne
 - **`Dockerfile`**: Dockerfile used to build the application's container image.
 - **`README.md`**: Project documentation.
 
-## Prerequisites
 
-Before setting up and deploying this project, ensure that you have the following:
-
-- **Google Cloud Platform (GCP) Account**: Access to GCP to create and manage resources.
-- **Google Kubernetes Engine (GKE)**: A Kubernetes cluster set up on GCP.
-- **GitLab CI/CD**: A GitLab account and a repository where this project is hosted.
